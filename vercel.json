@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/index.py",
+      "src": "backend/chatbot/main.py",
       "use": "@vercel/python"
     },
     {
@@ -12,12 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/documents/(.*)",
-      "dest": "/documents/$1"
+      "src": "/api/(.*)",
+      "dest": "backend/chatbot/main.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "backend/index.py"
+      "src": "/documents/(.*)",
+      "dest": "/documents/$1"
     },
     {
       "src": "/(.*)",
